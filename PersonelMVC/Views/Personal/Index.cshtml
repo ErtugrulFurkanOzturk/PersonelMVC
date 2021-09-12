@@ -1,0 +1,38 @@
+﻿@model List<PersonelMVC.Models.EntityFramework.Personal>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personel List</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Departman</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Birth</th>
+            <th>Gender</th>
+            <th>MarialStatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personal in Model)
+        {
+            <tr>
+                <td>@personal.Name</td>
+                <td>@personal.Surname</td>
+                <td>@personal.Departman.DepartmanName</td>
+                <td>@personal.Age</td>
+                <td>@personal.Salary</td>
+                <td>@personal.Birth.ToString("dd-MM-yyyy")</td>
+                <td>@(personal.Gender==true?"Man":"Woman")</td>
+                <td>@personal.MarialStatus</td>
+            </tr>
+        }
+
+    </tbody>
+   
+</table>

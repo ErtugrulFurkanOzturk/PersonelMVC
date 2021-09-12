@@ -1,0 +1,16 @@
+﻿@model PersonelMVC.Models.EntityFramework.Departman
+@{
+    ViewBag.Title = "NewDepartman";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Save","Departman",FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.DepartmanName)
+                    @Html.TextBoxFor(m=>m.DepartmanName,new { @class="form-control" })
+                </div>
+                @Html.HiddenFor(m=>m.Id)
+                <button type="submit" class="=btn btn-success">Save</button>
+            }
+

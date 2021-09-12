@@ -1,0 +1,30 @@
+﻿@using PersonelMVC.Models.EntityFramework
+@model List<Departman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a class="btn btn-success" href="/Departman/NewDepartman">New Departman</a>
+<h2>Departmant List</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var departman in Model)
+        {
+        <tr>
+            <td>@departman.Id</td>
+            <td>@departman.DepartmanName</td>
+            <td><a class="btn btn-primary" href="/Departman/Update/@departman.Id">Update</a></td>
+            <td><a class="btn btn-warning" href="/Departman/Delete/@departman.Id">Delete</a></td>
+        </tr>
+        }
+
+    </tbody>
+</table>
